@@ -2,8 +2,8 @@
 
 Request :
 
-  - Method: GET
-  - Endpoint: api/layanan
+  - Method: ```GET```
+  - Endpoint: ```api/layanan```
   - Header: 
 
     - Accept : application/json
@@ -18,6 +18,9 @@ Response :
         {
             "nama_layanan": "string"
         },
+        {
+            "nama_layanan": "string"
+        }
     ]
 }
 ``` 
@@ -26,8 +29,8 @@ Response :
 
 Request : 
   
-  - Method: GET
-  - Endpoint: api/layanan/:id
+  - Method: ```GET```
+  - Endpoint: ```api/layanan/:id```
   - Header:
     
     - Accept: application/json
@@ -99,7 +102,7 @@ Response :
     "status": "string",
     "message": "string",
     "data": {
-        "nama_layanan": "string"
+        "nama_layanan": "string",
         "_id": "string",
         "__v": 0
     }
@@ -110,7 +113,7 @@ Response :
 Request :
 
   - Method: ```DELETE```
-  - Endpoint: ```/api/layanan/:id
+  - Endpoint: ```/api/layanan/:id```
   - Header: 
     
     - Accept: application/json
@@ -137,11 +140,11 @@ Request :
 Response: 
 ```json
 {
-    "status": "string",
-	"message": "string",
-	"data": {
-		"acknowledged": "boolean",
-		"deletedCount": "integer"
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "acknowledged": "boolean",
+	"deletedCount": "integer"
+  }
 }
 ```
