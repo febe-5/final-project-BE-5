@@ -5,7 +5,7 @@ module.exports = {
       const dataKlinik = await Klinik.find({});
       res.json({
         status: "success",
-        message: "Get all data",
+        message: "Get all data success",
         dataKlinik,
       });
     } catch (error) {
@@ -28,7 +28,7 @@ module.exports = {
       } else {
         res.json({
           status: "success",
-          message: "Get data",
+          message: "Get data success",
           dataKlinik,
         });
       }
