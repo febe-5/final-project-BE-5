@@ -288,6 +288,8 @@ Response:
 }
 ```
 
+## Get All Psikolog
+
 Request : 
   
   - Method : ```GET```
