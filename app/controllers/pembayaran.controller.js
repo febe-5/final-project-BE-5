@@ -46,7 +46,9 @@ module.exports = {
       const { id } = req.params;
       const update = req.body;
       const { bukti_bayar } = update;
-      const data = await Pembayaran.findByIdAndUpdate(id, update);
+      const data = await Pembayaran.findByIdAndUpdate(id, {
+        bukti_bayar: bukti_bayar,
+      });
       const dataPsikolog = await data.populate("id_psikolog");
       const { nama_psikolog, no_telp } = dataPsikolog.id_psikolog;
       if (bukti_bayar) {

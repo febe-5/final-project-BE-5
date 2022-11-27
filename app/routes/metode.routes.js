@@ -1,5 +1,8 @@
 const router = require("express").Router();
 
+const verifyToken = require("../middleware/verifyToken");
+const verifyUser = require("../middleware/verifyUser");
+
 const {
   getAllMetode,
   getMetodeByID,
@@ -12,9 +15,9 @@ const {
 router.get("/metode", getAllMetode);
 router.get("/metode/:id", getMetodeByID);
 
-router.post("/metode", postMetode);
-router.put("/metode/:id", updateMetodeByID);
-router.delete("/metode/:id", delMetodeByID);
-router.delete("/metode", delAllMetode);
+router.post("/metode", verifyToken, verifyUser, postMetode);
+router.put("/metode/:id", verifyToken, verifyUser, updateMetodeByID);
+router.delete("/metode/:id", verifyToken, verifyUser, delMetodeByID);
+router.delete("/metode", verifyToken, verifyUser, delAllMetode);
 
 module.exports = router;
