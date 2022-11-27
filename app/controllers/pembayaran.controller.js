@@ -1,5 +1,21 @@
 const Pembayaran = require("../models/pembayaran.model");
 
+require("../models/psikolog");
+require("../models/user.model");
+
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  port: 465,
+  host: "smtp.gmail.com",
+  auth: {
+    user: "ronaldorodhi@gmail.com",
+    // pass minta ke saya
+    pass: "",
+  },
+  secure: true,
+});
+
 module.exports = {
   getAllPembayaran: async (req, res) => {
     try {
@@ -21,7 +37,7 @@ module.exports = {
     }
   },
 
-  postPembayaran: async (req, res) => {
+  postPembayaran: (req, res) => {
     try {
       const data = req.body;
       //data = req.user
@@ -31,6 +47,26 @@ module.exports = {
       res.json({
         status: "success",
         message: "pending payment",
+      });
+
+      const mailData = {
+        from: "Mental Meds",
+        //nanti diganti dari req user
+        to: "ronaldorodhi@gmail.com",
+        subject: "Mental Meds",
+        html:
+          "<b>Terima Kasih sudah memesan layanan kami!</b>" +
+          "<br>Berikut cara pembayaran pesanan:<br/>" +
+          "<br>Kirim ke rekening 024 0121 212 sesuai nominal<br/>",
+      };
+
+      transporter.sendMail(mailData, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        res
+          .status(200)
+          .send({ message: "Mail send", message_id: info.messageId });
       });
     } catch (error) {
       res.status(500).send({
