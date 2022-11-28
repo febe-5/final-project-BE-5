@@ -5,5 +5,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/layanan", require("./layanan.route"));
+router.use("/psikolog", require("./psikolog.route"));
 
 module.exports = router;
