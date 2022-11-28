@@ -4,6 +4,6 @@ router.get("/", (req, res) => {
 	res.json({ message: "hello from express" });
 });
 
-// put your route here
+router.use("/layanan", require("./layanan.route"));
 
 module.exports = router;
