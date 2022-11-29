@@ -7,5 +7,6 @@ router.get("/", (req, res) => {
 
 router.use("/", klinikRoute);
 // put your route here
+router.use("/layanan", require("./layanan.route"));
 
 module.exports = router;
