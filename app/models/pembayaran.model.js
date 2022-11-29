@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const pembayaranSchema = new Schema({
-  bukti_bayar: { type: String, default: "" },
+  // bukti_bayar: { type: String, default: "" },
+  id_order: { type: String },
   id_psikolog: {
     type: mongoose.ObjectId,
     ref: "Psikolog",
@@ -15,6 +16,9 @@ const pembayaranSchema = new Schema({
   id_metode: {
     type: mongoose.ObjectId,
     ref: "metode",
+  },
+  response_midtrans: {
+    type: Object,
   },
 });
 

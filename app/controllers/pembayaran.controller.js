@@ -1,5 +1,13 @@
 const Pembayaran = require("../models/pembayaran.model");
 
+const midtransClient = require("midtrans-client");
+// Create Core API instance
+let core = new midtransClient.CoreApi({
+  isProduction: false,
+  serverKey: "SB-Mid-server-UWNx923VdFRYpelDXc6YuxCk",
+  clientKey: "SB-Mid-client-JYT7s_8nMyHm922U ",
+});
+
 module.exports = {
   getAllPembayaran: async (req, res) => {
     try {
@@ -25,8 +33,23 @@ module.exports = {
     try {
       const data = req.body;
       //data = req.user
-      const pembayaran = new Pembayaran({ ...data });
-      pembayaran.save();
+
+      core.charge(data).then((chargeResponse) => {
+        let dataPembayaran = {
+          id_order: chargeResponse.order_id,
+          id_psikolog: data.id_psikolog,
+          id_user: data.id_user,
+          jadwal: data.jadwal,
+          id_metode: data.id_metode,
+          response_midtrans: chargeResponse,
+        };
+
+        const pembayaran = new Pembayaran(dataPembayaran);
+        pembayaran.save();
+
+        console.log("chargeResponse:");
+        console.log(chargeResponse);
+      });
 
       res.json({
         status: "success",
@@ -76,7 +99,12 @@ module.exports = {
   getPembayaranByID: async (req, res) => {
     try {
       const { id } = req.params;
-      const data = await Pembayaran.findById(id);
+      console.log(id);
+      const transaksi = await core.transaction.status(id);
+      console.log(transaksi);
+      const data = await Pembayaran.findOneAndUpdate(req.params.id, {
+        response_midtrans: transaksi,
+      });
       res.json({
         status: "success",
         message: "Get data success",
