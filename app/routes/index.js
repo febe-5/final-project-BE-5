@@ -12,5 +12,6 @@ router.use("/", require("./article.route"));
 router.use("/", require("./category.route"));
 router.use("/", klinikRoute);
 router.use("/layanan", require("./layanan.route"));
+router.use("/psikolog", require("./psikolog.route"));
 
 module.exports = router;
