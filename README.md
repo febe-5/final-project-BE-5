@@ -9,7 +9,9 @@ Repo ini dibuat guna memenuhi tugas final project kelompok `BE-5`
 The description below will be found in each function
 
 (`user`, `admin`) -> Can be accessed by users and admins
+
 (`admin`) -> Only accessible to admin
+
 () -> Can be accessed even by unregistered users
 
 ## Authentication
