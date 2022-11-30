@@ -71,7 +71,7 @@ Response :
 }
 ``` 
 
-## Get Id Layanan
+## Get Id Psikolog
 
 Request : 
   
