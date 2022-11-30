@@ -1,23 +1,21 @@
 const router = require("express").Router();
+const verifyToken = require("../middleware/verifyToken");
+const verifyUser = require("../middleware/verifyUser");
 
 const {
     getAllPsikolog,
     getPsikologID,
     addPsikolog,
-
-    //function untuk membuat layanan dan memperbarui bidang "layanan" psikolog dengannya
-    addPsikologID,
-
     updatePsikolog,
     deletePsikologID,
     deleteAllPsikolog,
 } = require("../controllers/psikolog.controller")
 
-router.get("/", getAllPsikolog)
-router.get("/:id", getPsikologID)
-router.post("/", addPsikolog)
-router.put("/:id", updatePsikolog)
-router.delete("/:id", deletePsikologID)
-router.delete("/", deleteAllPsikolog)
+router.get("/", verifyToken, verifyUser, getAllPsikolog)
+router.get("/:id", verifyToken, verifyUser, getPsikologID)
+router.post("/", verifyToken, verifyUser, addPsikolog)
+router.put("/:id", verifyToken, verifyUser, updatePsikolog)
+router.delete("/:id", verifyToken, verifyUser, deletePsikologID)
+router.delete("/", verifyToken, verifyUser, deleteAllPsikolog)
 
 module.exports = router
