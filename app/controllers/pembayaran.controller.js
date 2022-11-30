@@ -1,4 +1,8 @@
 const Pembayaran = require("../models/pembayaran.model");
+const orderid = require("order-id")("key");
+
+require("../models/psikolog.model");
+require("../models/user.model");
 
 const midtransClient = require("midtrans-client");
 // Create Core API instance
@@ -32,7 +36,9 @@ module.exports = {
   postPembayaran: async (req, res) => {
     try {
       const data = req.body;
-      //data = req.user
+      const order_id = orderid.generate();
+      data.transaction_details.order_id = order_id;
+      console.log(data);
 
       core.charge(data).then((chargeResponse) => {
         let dataPembayaran = {
@@ -68,25 +74,12 @@ module.exports = {
     try {
       const { id } = req.params;
       const update = req.body;
-      const { bukti_bayar } = update;
-      const data = await Pembayaran.findByIdAndUpdate(id, {
-        bukti_bayar: bukti_bayar,
+      const data = await Pembayaran.findByIdAndUpdate(id, update);
+      res.json({
+        status: "success",
+        message: "Pembayaran Updated!",
+        data: update,
       });
-      const dataPsikolog = await data.populate("id_psikolog");
-      const { nama_psikolog, no_telp } = dataPsikolog.id_psikolog;
-      if (bukti_bayar) {
-        res.json({
-          status: "success",
-          message: "payment success",
-          data: { nama_psikolog, no_telp: `https://wa.me/${no_telp}` },
-        });
-      } else {
-        res.status(402).json({
-          status: "fail",
-          message: "payment failed",
-          reason: "payment method not valid",
-        });
-      }
     } catch (error) {
       res.status(500).send({
         status: "fail",
@@ -99,16 +92,15 @@ module.exports = {
   getPembayaranByID: async (req, res) => {
     try {
       const { id } = req.params;
-      console.log(id);
-      const transaksi = await core.transaction.status(id);
-      console.log(transaksi);
-      const data = await Pembayaran.findOneAndUpdate(req.params.id, {
-        response_midtrans: transaksi,
-      });
+      const resData = await Pembayaran.findOneAndUpdate(id);
+      const dataPsikolog = await resData.populate("id_psikolog");
+      const { nama_psikolog, no_telp } = dataPsikolog.id_psikolog;
+
       res.json({
         status: "success",
         message: "Get data success",
-        data,
+        resData,
+        dataPsikolog: { nama_psikolog, no_telp: `https://wa.me/${no_telp}` },
       });
     } catch (error) {
       res.status(500).send({

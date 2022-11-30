@@ -1,0 +1,17 @@
+const midtransClient = require("midtrans-client");
+const Pembayaran = require("../models/pembayaran.model");
+// Create Core API instance
+let core = new midtransClient.CoreApi({
+  isProduction: false,
+  serverKey: "SB-Mid-server-UWNx923VdFRYpelDXc6YuxCk",
+  clientKey: "SB-Mid-client-JYT7s_8nMyHm922U ",
+});
+
+module.exports = async (req, res, next) => {
+  const { id_order } = await Pembayaran.findById(req.params.id);
+  const transaksi = await core.transaction.status(id_order);
+  const data = await Pembayaran.findOneAndUpdate(req.params.id, {
+    response_midtrans: transaksi,
+  });
+  next();
+};
