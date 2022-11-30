@@ -9,6 +9,16 @@ Request :
 - Header :
   - Authorization : "your token which is earned after login"
 
+## Users
+
+| Field Name | Type     | Description    |
+| ---------- | -------- | -------------- |
+| id         | ObjectId | Users ID       |
+| nama       | string   | Users Name     |
+| email      | string   | Users Email    |
+| password   | string   | Users Password |
+| isAdmin    | boolean  | Users Roles    |
+
 ## Register
 
 Request :
@@ -22,20 +32,10 @@ Request :
 
 ```json
 {
-	"nama": "string",
-	"email": "string",
-	"password": "string"
-}
-```
-
-- Body for `admin` :
-
-```json
-{
-	"nama": "string",
-	"email": "string",
-	"password": "string",
-	"isAdmin": "boolean"
+	"nama": "Abil",
+	"email": "abil@gmail.com",
+	"password": "abil123",
+	"umur": 20
 }
 ```
 
@@ -43,8 +43,8 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string"
+	"status": "success",
+	"message": "user created successfully"
 }
 ```
 
@@ -61,8 +61,8 @@ Request :
 
 ```json
 {
-	"email": "string",
-	"password": "string"
+	"email": "admin@admin.com",
+	"password": "admin123"
 }
 ```
 
@@ -70,13 +70,15 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"accessToken": "string"
+	"status": "success",
+	"message": "login successfully",
+	"accessToken": "random string"
 }
 ```
 
-## Get Profile (user, admin)
+> `accessToken` is contain a random string that will later be used to access pages that need authorization headers
+
+## Show Profile (user, admin)
 
 Request :
 
@@ -90,12 +92,14 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
+	"status": "success",
+	"message": "user found",
 	"data": {
-		"_id": "string",
-		"nama": "string",
-		"email": "string"
+		"_id": "6386293f6a74b5de599b211d",
+		"nama": "admin",
+		"email": "admin@admin.com",
+		"umur": 20,
+		"__v": 0
 	}
 }
 ```
@@ -114,9 +118,10 @@ Request :
 
 ```json
 {
-	"nama": "string",
-	"email": "string",
-	"password": "string"
+	"nama": "admin updated",
+	"email": "admin1@admin.com",
+	"umur": 21,
+	"password": "admin1234"
 }
 ```
 
@@ -124,10 +129,12 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string"
+	"status": "success",
+	"message": "profile updated successfully"
 }
 ```
+
+> `request-body` at least contains 1 field between the four fields.
 
 ## Get All User (admin)
 
@@ -142,15 +149,24 @@ Request :
 Response :
 
 ```json
-"status": "string",
-"message": "string",
+"status": "success",
+"message": "all users found",
 "data": [
   {
-		"_id": "string",
-    "nama": "string",
-    "email": "string",
-    "umur": "number",
-    "isAdmin": "boolean"
+		"_id": "6386293f6a74b5de599b211d",
+    "nama": "admin updated",
+    "email": "admin1@admin.com",
+    "isAdmin": true,
+    "umur": 21,
+    "__v": 0
+  },
+  {
+		"_id": "6387041b3307128bb73f69db",
+    "nama": "Abil",
+    "email": "abil@gmail.com",
+    "isAdmin": false,
+    "umur": 20,
+    "__v": 0
   },
 ]
 ```
@@ -168,17 +184,19 @@ Request :
 Response :
 
 ```json
-"status": "string",
-"message": "string",
+"status": "success",
+"message": "user found",
 "data": {
-		"_id": "string",
-    "nama": "string",
-    "email": "string",
-    "isAdmin": "boolean"
+		"_id": "6387041b3307128bb73f69db",
+    "nama": "Abil",
+    "email": "abil@gmail.com",
+    "isAdmin": false,
+    "umur": 20,
+    "__v": 0
   }
 ```
 
-## Update User (admin)
+## Update User Role (admin)
 
 Request :
 
@@ -192,24 +210,15 @@ Request :
 
 ```json
 {
-	"nama": "string",
-	"email": "string",
-	"password": "string",
-	"isAdmin": "boolean"
+	"isAdmin": true
 }
 ```
 
 Response :
 
 ```json
-"status": "string",
-"message": "string",
-"data": {
-		"_id": "string",
-    "nama": "string",
-    "email": "string",
-    "isAdmin": "boolean"
-  }
+"status": "success",
+"message": "user role updated successfully",
 ```
 
 ## Delete User (admin)
@@ -225,6 +234,6 @@ Request :
 Response :
 
 ```json
-"status": "string",
-"message": "string"
+"status": "success",
+"message": "user deleted successfully"
 ```
