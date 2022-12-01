@@ -31,7 +31,7 @@ Request :
 4. [Klinik](https://github.com/febe-5/final-project-BE-5#klinik)
 5. [Psikolog](https://github.com/febe-5/final-project-BE-5#psikolog)
 6. [Layanan](https://github.com/febe-5/final-project-BE-5#layanan)
-7. [Metode](https://github.com/febe-5/final-project-BE-5#metode)
+7. [Metode](https://github.com/febe-5/final-project-BE-5#metode-pembayaran)
 8. [Pembayaran](https://github.com/febe-5/final-project-BE-5#pembayaran)
 
 # Users
