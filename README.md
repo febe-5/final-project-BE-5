@@ -31,6 +31,8 @@ Request :
 4. [Klinik](https://github.com/febe-5/final-project-BE-5#klinik)
 5. [Psikolog](https://github.com/febe-5/final-project-BE-5#psikolog)
 6. [Layanan](https://github.com/febe-5/final-project-BE-5#layanan)
+7. [Metode](https://github.com/febe-5/final-project-BE-5#metode)
+8. [Pembayaran](https://github.com/febe-5/final-project-BE-5#pembayaran)
 
 # Users
 
@@ -55,10 +57,10 @@ Request :
 
 ```json
 {
-	"nama": "Abil",
-	"email": "abil@gmail.com",
-	"password": "abil123",
-	"umur": 20
+  "nama": "Abil",
+  "email": "abil@gmail.com",
+  "password": "abil123",
+  "umur": 20
 }
 ```
 
@@ -66,8 +68,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "user created successfully"
+  "status": "success",
+  "message": "user created successfully"
 }
 ```
 
@@ -84,8 +86,8 @@ Request :
 
 ```json
 {
-	"email": "admin@admin.com",
-	"password": "admin123"
+  "email": "admin@admin.com",
+  "password": "admin123"
 }
 ```
 
@@ -93,9 +95,9 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "login successfully",
-	"accessToken": "random string"
+  "status": "success",
+  "message": "login successfully",
+  "accessToken": "random string"
 }
 ```
 
@@ -115,15 +117,15 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "user found",
-	"data": {
-		"_id": "6386293f6a74b5de599b211d",
-		"nama": "admin",
-		"email": "admin@admin.com",
-		"umur": 20,
-		"__v": 0
-	}
+  "status": "success",
+  "message": "user found",
+  "data": {
+    "_id": "6386293f6a74b5de599b211d",
+    "nama": "admin",
+    "email": "admin@admin.com",
+    "umur": 20,
+    "__v": 0
+  }
 }
 ```
 
@@ -141,10 +143,10 @@ Request :
 
 ```json
 {
-	"nama": "admin updated",
-	"email": "admin1@admin.com",
-	"umur": 21,
-	"password": "admin1234"
+  "nama": "admin updated",
+  "email": "admin1@admin.com",
+  "umur": 21,
+  "password": "admin1234"
 }
 ```
 
@@ -152,8 +154,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "profile updated successfully"
+  "status": "success",
+  "message": "profile updated successfully"
 }
 ```
 
@@ -233,7 +235,7 @@ Request :
 
 ```json
 {
-	"isAdmin": true
+  "isAdmin": true
 }
 ```
 
@@ -285,30 +287,30 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "all articles found",
-	"data": [
-		{
-			"_id": "63871f163307128bb73f69fe",
-			"title": "Coba Judul Article 2",
-			"slug": "coba-judul-article-2",
-			"desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
-			"image": "image/coba2.jpg",
-			"author": "admin",
-			"category": ["63865ec7635479c3f841f6bc", "63865ed9635479c3f841f6c1"],
-			"date": "2022-11-30T09:15:02.832Z"
-		},
-		{
-			"_id": "63871f163307128bb73f69ff",
-			"title": "Coba Judul Article 3",
-			"slug": "coba-judul-article-3",
-			"desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
-			"image": "image/coba3.jpg",
-			"author": "admin",
-			"category": ["63865ec7635479c3f841f6bc"],
-			"date": "2022-11-30T09:15:02.832Z"
-		}
-	]
+  "status": "success",
+  "message": "all articles found",
+  "data": [
+    {
+      "_id": "63871f163307128bb73f69fe",
+      "title": "Coba Judul Article 2",
+      "slug": "coba-judul-article-2",
+      "desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
+      "image": "image/coba2.jpg",
+      "author": "admin",
+      "category": ["63865ec7635479c3f841f6bc", "63865ed9635479c3f841f6c1"],
+      "date": "2022-11-30T09:15:02.832Z"
+    },
+    {
+      "_id": "63871f163307128bb73f69ff",
+      "title": "Coba Judul Article 3",
+      "slug": "coba-judul-article-3",
+      "desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
+      "image": "image/coba3.jpg",
+      "author": "admin",
+      "category": ["63865ec7635479c3f841f6bc"],
+      "date": "2022-11-30T09:15:02.832Z"
+    }
+  ]
 }
 ```
 
@@ -323,18 +325,18 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "article found",
-	"data": {
-		"_id": "63871f163307128bb73f69fe",
-		"title": "Coba Judul Article 2",
-		"slug": "coba-judul-article-2",
-		"desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
-		"image": "image/coba2.jpg",
-		"author": "admin",
-		"category": ["63865ec7635479c3f841f6bc", "63865ed9635479c3f841f6c1"],
-		"date": "2022-11-30T09:15:02.832Z"
-	}
+  "status": "success",
+  "message": "article found",
+  "data": {
+    "_id": "63871f163307128bb73f69fe",
+    "title": "Coba Judul Article 2",
+    "slug": "coba-judul-article-2",
+    "desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
+    "image": "image/coba2.jpg",
+    "author": "admin",
+    "category": ["63865ec7635479c3f841f6bc", "63865ed9635479c3f841f6c1"],
+    "date": "2022-11-30T09:15:02.832Z"
+  }
 }
 ```
 
@@ -350,17 +352,17 @@ Response :
 
 ```json
 {
-	"title": "Coba Judul Article 2",
-	"desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
-	"image": "image/coba2.jpg",
-	"category": [
-		{
-			"_id": "63865ec7635479c3f841f6bc"
-		},
-		{
-			"_id": "63865ed9635479c3f841f6c1"
-		}
-	]
+  "title": "Coba Judul Article 2",
+  "desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
+  "image": "image/coba2.jpg",
+  "category": [
+    {
+      "_id": "63865ec7635479c3f841f6bc"
+    },
+    {
+      "_id": "63865ed9635479c3f841f6c1"
+    }
+  ]
 }
 ```
 
@@ -368,8 +370,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "article created successfully"
+  "status": "success",
+  "message": "article created successfully"
 }
 ```
 
@@ -385,17 +387,17 @@ Response :
 
 ```json
 {
-	"title": "Coba Judul Article 2",
-	"desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
-	"image": "image/coba2.jpg",
-	"category": [
-		{
-			"_id": "63865ec7635479c3f841f6bc"
-		},
-		{
-			"_id": "63865ed9635479c3f841f6c1"
-		}
-	]
+  "title": "Coba Judul Article 2",
+  "desc": "alkfjasflkajsfalskf aslfkjasflkajfalskfjaawfaasdf asdlaksjdawfasdf asdflkjasdflawekfjasdf asdfasdlfkj",
+  "image": "image/coba2.jpg",
+  "category": [
+    {
+      "_id": "63865ec7635479c3f841f6bc"
+    },
+    {
+      "_id": "63865ed9635479c3f841f6c1"
+    }
+  ]
 }
 ```
 
@@ -403,8 +405,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "article updated successfully"
+  "status": "success",
+  "message": "article updated successfully"
 }
 ```
 
@@ -422,8 +424,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "article deleted successfully"
+  "status": "success",
+  "message": "article deleted successfully"
 }
 ```
 
@@ -439,8 +441,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "all your articles were successfully deleted"
+  "status": "success",
+  "message": "all your articles were successfully deleted"
 }
 ```
 
@@ -462,18 +464,18 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "all categories found",
-	"data": [
-		{
-			"_id": "63865ec7635479c3f841f6bc",
-			"nama": "Kecemasan"
-		},
-		{
-			"_id": "63865ed9635479c3f841f6c1",
-			"nama": "Trauma"
-		}
-	]
+  "status": "success",
+  "message": "all categories found",
+  "data": [
+    {
+      "_id": "63865ec7635479c3f841f6bc",
+      "nama": "Kecemasan"
+    },
+    {
+      "_id": "63865ed9635479c3f841f6c1",
+      "nama": "Trauma"
+    }
+  ]
 }
 ```
 
@@ -488,12 +490,12 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "category found",
-	"data": {
-		"_id": "63865ec7635479c3f841f6bc",
-		"nama": "Kecemasan"
-	}
+  "status": "success",
+  "message": "category found",
+  "data": {
+    "_id": "63865ec7635479c3f841f6bc",
+    "nama": "Kecemasan"
+  }
 }
 ```
 
@@ -509,7 +511,7 @@ Response :
 
 ```json
 {
-	"nama": "Trauma"
+  "nama": "Trauma"
 }
 ```
 
@@ -517,8 +519,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "new category created successfully"
+  "status": "success",
+  "message": "new category created successfully"
 }
 ```
 
@@ -534,7 +536,7 @@ Response :
 
 ```json
 {
-	"nama": "Healing"
+  "nama": "Healing"
 }
 ```
 
@@ -542,8 +544,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "category updated successfully"
+  "status": "success",
+  "message": "category updated successfully"
 }
 ```
 
@@ -559,8 +561,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "category deleted successfully"
+  "status": "success",
+  "message": "category deleted successfully"
 }
 ```
 
@@ -576,8 +578,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "all categories deleted successfully"
+  "status": "success",
+  "message": "all categories deleted successfully"
 }
 ```
 
@@ -606,19 +608,19 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"dataKlinik": [
-		{
-			"_id": "string",
-			"url_gambar": "string",
-			"nama": "string",
-			"lokasi": "string",
-			"profil": "string",
-			"email": "string",
-			"no_telp": "string"
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "dataKlinik": [
+    {
+      "_id": "string",
+      "url_gambar": "string",
+      "nama": "string",
+      "lokasi": "string",
+      "profil": "string",
+      "email": "string",
+      "no_telp": "string"
+    }
+  ]
 }
 ```
 
@@ -636,19 +638,19 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"dataKlinik": [
-		{
-			"_id": "string",
-			"url_gambar": "string",
-			"nama": "string",
-			"lokasi": "string",
-			"profil": "string",
-			"email": "string",
-			"no_telp": "string"
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "dataKlinik": [
+    {
+      "_id": "string",
+      "url_gambar": "string",
+      "nama": "string",
+      "lokasi": "string",
+      "profil": "string",
+      "email": "string",
+      "no_telp": "string"
+    }
+  ]
 }
 ```
 
@@ -666,12 +668,12 @@ Request :
 
 ```json
 {
-	"url_gambar": "string",
-	"nama": "string",
-	"lokasi": "string",
-	"profil": "string",
-	"email": "string",
-	"no_telp": "string"
+  "url_gambar": "string",
+  "nama": "string",
+  "lokasi": "string",
+  "profil": "string",
+  "email": "string",
+  "no_telp": "string"
 }
 ```
 
@@ -679,19 +681,19 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"dataKlinik": [
-		{
-			"_id": "string",
-			"url_gambar": "string",
-			"nama": "string",
-			"lokasi": "string",
-			"profil": "string",
-			"email": "string",
-			"no_telp": "string"
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "dataKlinik": [
+    {
+      "_id": "string",
+      "url_gambar": "string",
+      "nama": "string",
+      "lokasi": "string",
+      "profil": "string",
+      "email": "string",
+      "no_telp": "string"
+    }
+  ]
 }
 ```
 
@@ -709,12 +711,12 @@ Request :
 
 ```json
 {
-	"url_gambar": "string",
-	"nama": "string",
-	"lokasi": "string",
-	"profil": "string",
-	"email": "string",
-	"no_telp": "string"
+  "url_gambar": "string",
+  "nama": "string",
+  "lokasi": "string",
+  "profil": "string",
+  "email": "string",
+  "no_telp": "string"
 }
 ```
 
@@ -722,19 +724,19 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"dataKlinik": [
-		{
-			"_id": "string",
-			"url_gambar": "string",
-			"nama": "string",
-			"lokasi": "string",
-			"profil": "string",
-			"email": "string",
-			"no_telp": "string"
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "dataKlinik": [
+    {
+      "_id": "string",
+      "url_gambar": "string",
+      "nama": "string",
+      "lokasi": "string",
+      "profil": "string",
+      "email": "string",
+      "no_telp": "string"
+    }
+  ]
 }
 ```
 
@@ -752,8 +754,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "Delete all data success"
+  "status": "success",
+  "message": "Delete all data success"
 }
 ```
 
@@ -771,8 +773,8 @@ Response :
 
 ```json
 {
-	"status": "success",
-	"message": "Delete data success"
+  "status": "success",
+  "message": "Delete data success"
 }
 ```
 
@@ -804,48 +806,48 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": [
-		{
-			"_id": "string",
-			"nama_psikolog": "string",
-			"jenis_kelamin": "string",
-			"Pendidikan": "string",
-			"Pengalaman": "string",
-			"harga": "number",
-			"deskripsi": "string",
-			"image_url": "string",
-			"layanan": [
-				{
-					"_id": "string"
-				},
-				{
-					"_id": "string"
-				}
-			],
-			"__v": 0
-		},
-		{
-			"_id": "string",
-			"nama_psikolog": "string",
-			"jenis_kelamin": "string",
-			"Pendidikan": "string",
-			"Pengalaman": "string",
-			"harga": "number",
-			"deskripsi": "string",
-			"image_url": "string",
-			"layanan": [
-				{
-					"_id": "string"
-				},
-				{
-					"_id": "string"
-				}
-			],
-			"__v": 0
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "data": [
+    {
+      "_id": "string",
+      "nama_psikolog": "string",
+      "jenis_kelamin": "string",
+      "Pendidikan": "string",
+      "Pengalaman": "string",
+      "harga": "number",
+      "deskripsi": "string",
+      "image_url": "string",
+      "layanan": [
+        {
+          "_id": "string"
+        },
+        {
+          "_id": "string"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "string",
+      "nama_psikolog": "string",
+      "jenis_kelamin": "string",
+      "Pendidikan": "string",
+      "Pengalaman": "string",
+      "harga": "number",
+      "deskripsi": "string",
+      "image_url": "string",
+      "layanan": [
+        {
+          "_id": "string"
+        },
+        {
+          "_id": "string"
+        }
+      ],
+      "__v": 0
+    }
+  ]
 }
 ```
 
@@ -863,26 +865,26 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"_id": "string",
-		"nama_psikolog": "string",
-		"jenis_kelamin": "string",
-		"Pendidikan": "string",
-		"Pengalaman": "string",
-		"harga": "number",
-		"deskripsi": "string",
-		"image_url": "string",
-		"layanan": [
-			{
-				"_id": "string"
-			},
-			{
-				"_id": "string"
-			}
-		]
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "_id": "string",
+    "nama_psikolog": "string",
+    "jenis_kelamin": "string",
+    "Pendidikan": "string",
+    "Pengalaman": "string",
+    "harga": "number",
+    "deskripsi": "string",
+    "image_url": "string",
+    "layanan": [
+      {
+        "_id": "string"
+      },
+      {
+        "_id": "string"
+      }
+    ]
+  }
 }
 ```
 
@@ -902,21 +904,21 @@ Request :
 
 ```json
 {
-	"nama_psikolog": "string",
-	"jenis_kelamin": "string",
-	"Pendidikan": "string",
-	"Pengalaman": "string",
-	"harga": "number",
-	"deskripsi": "string",
-	"image_url": "string",
-	"layanan": [
-		{
-			"_id": "string"
-		},
-		{
-			"_id": "string"
-		}
-	]
+  "nama_psikolog": "string",
+  "jenis_kelamin": "string",
+  "Pendidikan": "string",
+  "Pengalaman": "string",
+  "harga": "number",
+  "deskripsi": "string",
+  "image_url": "string",
+  "layanan": [
+    {
+      "_id": "string"
+    },
+    {
+      "_id": "string"
+    }
+  ]
 }
 ```
 
@@ -924,25 +926,25 @@ Response:
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"nama_psikolog": "string",
-		"jenis_kelamin": "string",
-		"Pendidikan": "string",
-		"Pengalaman": "string",
-		"harga": "number",
-		"deskripsi": "string",
-		"image_url": "string",
-		"layanan": [
-			{
-				"_id": "string"
-			},
-			{
-				"_id": "string"
-			}
-		]
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "nama_psikolog": "string",
+    "jenis_kelamin": "string",
+    "Pendidikan": "string",
+    "Pengalaman": "string",
+    "harga": "number",
+    "deskripsi": "string",
+    "image_url": "string",
+    "layanan": [
+      {
+        "_id": "string"
+      },
+      {
+        "_id": "string"
+      }
+    ]
+  }
 }
 ```
 
@@ -962,21 +964,21 @@ Request :
 
 ```json
 {
-	"nama_psikolog": "string",
-	"jenis_kelamin": "string",
-	"Pendidikan": "string",
-	"Pengalaman": "string",
-	"harga": "number",
-	"deskripsi": "string",
-	"image_url": "string",
-	"layanan": [
-		{
-			"_id": "string"
-		},
-		{
-			"_id": "string"
-		}
-	]
+  "nama_psikolog": "string",
+  "jenis_kelamin": "string",
+  "Pendidikan": "string",
+  "Pengalaman": "string",
+  "harga": "number",
+  "deskripsi": "string",
+  "image_url": "string",
+  "layanan": [
+    {
+      "_id": "string"
+    },
+    {
+      "_id": "string"
+    }
+  ]
 }
 ```
 
@@ -984,27 +986,27 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"nama_psikolog": "string",
-		"jenis_kelamin": "string",
-		"Pendidikan": "string",
-		"Pengalaman": "string",
-		"harga": "number",
-		"deskripsi": "string",
-		"image_url": "string",
-		"layanan": [
-			{
-				"_id": "string"
-			},
-			{
-				"_id": "string"
-			}
-		],
-		"_id": "string",
-		"__v": 0
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "nama_psikolog": "string",
+    "jenis_kelamin": "string",
+    "Pendidikan": "string",
+    "Pengalaman": "string",
+    "harga": "number",
+    "deskripsi": "string",
+    "image_url": "string",
+    "layanan": [
+      {
+        "_id": "string"
+      },
+      {
+        "_id": "string"
+      }
+    ],
+    "_id": "string",
+    "__v": 0
+  }
 }
 ```
 
@@ -1023,8 +1025,8 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string"
+  "status": "string",
+  "message": "string"
 }
 ```
 
@@ -1043,12 +1045,12 @@ Response:
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"acknowledged": "boolean",
-		"deletedCount": "integer"
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "acknowledged": "boolean",
+    "deletedCount": "integer"
+  }
 }
 ```
 
@@ -1073,20 +1075,20 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": [
-		{
-			"_id": "string",
-			"nama_layanan": "string",
-			"__v": 0
-		},
-		{
-			"_id": "string",
-			"nama_layanan": "string",
-			"__v": 0
-		}
-	]
+  "status": "string",
+  "message": "string",
+  "data": [
+    {
+      "_id": "string",
+      "nama_layanan": "string",
+      "__v": 0
+    },
+    {
+      "_id": "string",
+      "nama_layanan": "string",
+      "__v": 0
+    }
+  ]
 }
 ```
 
@@ -1104,12 +1106,12 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"_id": "string",
-		"nama_layanan": "string"
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "_id": "string",
+    "nama_layanan": "string"
+  }
 }
 ```
 
@@ -1129,7 +1131,7 @@ Request :
 
 ```json
 {
-	"nama_layanan": "string"
+  "nama_layanan": "string"
 }
 ```
 
@@ -1137,13 +1139,13 @@ Response:
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"nama_layanan": "string",
-		"_id": "string",
-		"__v": 0
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "nama_layanan": "string",
+    "_id": "string",
+    "__v": 0
+  }
 }
 ```
 
@@ -1163,7 +1165,7 @@ Request :
 
 ```json
 {
-	"nama_layanan": "string"
+  "nama_layanan": "string"
 }
 ```
 
@@ -1171,13 +1173,13 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"nama_layanan": "string",
-		"_id": "string",
-		"__v": 0
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "nama_layanan": "string",
+    "_id": "string",
+    "__v": 0
+  }
 }
 ```
 
@@ -1196,8 +1198,8 @@ Response :
 
 ```json
 {
-	"status": "string",
-	"message": "string"
+  "status": "string",
+  "message": "string"
 }
 ```
 
@@ -1216,11 +1218,335 @@ Response:
 
 ```json
 {
-	"status": "string",
-	"message": "string",
-	"data": {
-		"acknowledged": "boolean",
-		"deletedCount": "integer"
-	}
+  "status": "string",
+  "message": "string",
+  "data": {
+    "acknowledged": "boolean",
+    "deletedCount": "integer"
+  }
+}
+```
+
+| Field Name | Type     | Description |
+| ---------- | -------- | ----------- |
+| \_id       | ObjectId | Id Metode   |
+| nama       | string   | nama Metode |
+
+## Get All metode (User, Admin)
+
+Request :
+
+- Method : `GET`
+- Endpoint : `api/metode`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Get data success",
+  "data": [
+    {
+      "_id": "string",
+      "nama": "string"
+    }
+  ]
+}
+```
+
+## Get Metode By Id (User, Admin)
+
+Request :
+
+- Method : `GET`
+- Endpoint : `api/metode/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+```json
+{
+  "status": "success",
+  "message": "Get data success",
+  "data": {
+    "_id": "string",
+    "nama": "string"
+  }
+}
+```
+
+## Post Metode(Admin)
+
+Request :
+
+- Method : `POST`
+- Endpoint : `api/metode/`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+- Body :
+
+```json
+{
+  "nama": "string"
+}
+```
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Post data success",
+  "data": {
+    "_id": "string",
+    "nama": "string"
+  }
+}
+```
+
+## Update Metode By Id(Admin)
+
+Request :
+
+- Method : `PUT`
+- Endpoint : `api/metode/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+- Body :
+
+```json
+{
+  "nama": "string"
+}
+```
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Update data success",
+  "data": {
+    "_id": "string",
+    "nama": "string"
+  }
+}
+```
+
+## Delete Metode By Id(Admin)
+
+Request :
+
+- Method : `DELETE`
+- Endpoint : `api/metode/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Delete data success"
+}
+```
+
+## Delete All Metode By Id(Admin)
+
+Request :
+
+- Method : `DELETE`
+- Endpoint : `api/metode/`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Delete all data success"
+}
+```
+
+| Field Name  | Type     | Description |
+| ----------- | -------- | ----------- |
+| \_id        | ObjectId | Id Metode   |
+| id_psikolog | ObjectId | Id Metode   |
+| id_user     | ObjectId | Id Metode   |
+| jadwal      | String   | Id Metode   |
+| id_metode   | ObjectId | Id Metode   |
+
+## Get All Data Pembayaran (admin)
+
+Request :
+
+- Method : `GET`
+- Endpoint : `api/pembayaran`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+"status": "string",
+"message": "string",
+"data": [
+  {
+    "id_psikolog": {
+        "_id": "string",
+        "nama_psikolog": "string",
+        "no_telp": "string",
+        "pengalaman": "string",
+        "jadwal": "string",
+        "harga": "integer",
+        }
+    "id_user": {
+        "_id": "string",
+        "nama": "string",
+        "email": "string",
+        "password": "string",
+        "umur": "integer",
+        "isAdmin": "boolean",
+    }
+    "jadwal": "string",
+    "id_metode":  {
+        "_id": "string",
+        "nama": "string",
+      },
+  },
+]
+```
+
+## Delete All Data Pembayaran (Admin)
+
+Request :
+
+- Method : `DELETE`
+- Endpoint : `api/pembayaran`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Delete all data success"
+}
+```
+
+## Create payment (User)
+
+Request :
+
+- Method : `POST`
+- Endpoint : `api/pembayaran`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+- Body :
+
+```json
+{
+  "id_psikolog": "ObjectId('string')",
+  "id_user": "ObjectId('string')",
+  "jadwal": "string",
+  "id_metode": "ObjectId('string')"
+}
+```
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "pending payment"
+}
+```
+
+## Update Data Pembayaran By Id (User)
+
+Request :
+
+- Method : `PUT`
+- Endpoint : `api/pembayaran/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+- Body :
+
+```json
+{
+  "bukti_bayar": "string"
+}
+```
+
+Response :
+
+```json
+{
+  {
+  "status": "success",
+  "message": "payment success",
+  "data": {
+    "nama_psikolog": "string",
+    "no_telp": "string"
+  }
+}
+}
+```
+
+## Get Data Pembayaran By Id (User)
+
+Request :
+
+- Method : `POST`
+- Endpoint : `api/pembayaran/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Get data success",
+  "data": {
+    "_id": "string",
+    "id_psikolog": "string",
+    "id_user": "string",
+    "jadwal": "string",
+    "id_metode": "string"
+  }
+}
+```
+
+## Delete Data Pembayaran By Id (User)
+
+Request :
+
+- Method : `Delete`
+- Endpoint : `api/pembayaran/:id`
+- Header :
+  - Accept : application/json
+  - Authorization : `your token`
+
+Response :
+
+```json
+{
+  "status": "success",
+  "message": "Delete data success"
 }
 ```
