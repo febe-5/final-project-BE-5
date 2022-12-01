@@ -632,7 +632,6 @@ Request :
 - Endpoint : `api/klinik/:id`
 - Header :
   - Accept : application/json
-- Body :
 
 Response :
 
@@ -1380,13 +1379,13 @@ Response :
 
 # Pembayaran
 
-| Field Name  | Type     | Description |
-| ----------- | -------- | ----------- |
-| \_id        | ObjectId | Id Metode   |
-| id_psikolog | ObjectId | Id Metode   |
-| id_user     | ObjectId | Id Metode   |
-| jadwal      | String   | Id Metode   |
-| id_metode   | ObjectId | Id Metode   |
+| Field Name  | Type     | Description    |
+| ----------- | -------- | -----------    |
+| \_id        | ObjectId | Id Pembayaran  |
+| id_psikolog | ObjectId | Id Psikolog    |
+| id_user     | ObjectId | Id User        |
+| jadwal      | String   | Jadwal         |
+| id_metode   | ObjectId | Id Metode      |
 
 ## Get All Data Pembayaran (admin)
 
