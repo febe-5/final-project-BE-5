@@ -1227,6 +1227,8 @@ Response:
 }
 ```
 
+# Metode Pembayaran
+
 | Field Name | Type     | Description |
 | ---------- | -------- | ----------- |
 | \_id       | ObjectId | Id Metode   |
@@ -1375,6 +1377,8 @@ Response :
   "message": "Delete all data success"
 }
 ```
+
+# Pembayaran
 
 | Field Name  | Type     | Description |
 | ----------- | -------- | ----------- |
