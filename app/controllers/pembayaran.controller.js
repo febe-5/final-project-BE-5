@@ -25,7 +25,7 @@ module.exports = {
     try {
       const data = req.body;
       //data = req.user
-      const pembayaran = new Pembayaran({ ...data });
+      const pembayaran = new Pembayaran({ ...data, id_user:req.user._id });
       pembayaran.save();
 
       res.json({
