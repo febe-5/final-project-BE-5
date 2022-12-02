@@ -1462,7 +1462,6 @@ Request :
 ```json
 {
   "id_psikolog": "ObjectId('string')",
-  "id_user": "ObjectId('string')",
   "jadwal": "string",
   "id_metode": "ObjectId('string')"
 }
